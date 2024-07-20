@@ -34,9 +34,7 @@ public class productController {
 		}catch(Exception err) {
 			String errorMessage = "Failed to create new Product"+err.getMessage();
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR); // return error message and 500 internal server error
-			
 		}
-		
 	}
 	
 	//get all products 
@@ -50,7 +48,6 @@ public class productController {
 		}catch(Exception err) {
 			String errorMessage = "Failed to get all product data !"+err.getMessage();
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
-			
 		}
 	}
 	
@@ -65,7 +62,6 @@ public class productController {
 			String errorMessage = "Failed to get product by productId!";
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
-		
 	}
 	
 	// update the products properties 
@@ -95,7 +91,4 @@ public class productController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
-	
-
 }

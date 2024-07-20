@@ -41,12 +41,10 @@ public class productServiceImplementation implements productService {
 				throw new Exception("Products Empty!");
 			}
 			return allProducts;
-			
 		}catch(Exception err) {
 			System.err.println("Failed to get all products data!" + err.getMessage());
 			throw err;
 		}
-		
 	}
 	
 
@@ -58,14 +56,13 @@ public class productServiceImplementation implements productService {
 		return product;
 	}
 
+	
 	@Override
 	public Product updateProduct(Product newProduct, String productId) {
 		try {
 			Product product = productRepo.findById(productId)
 	                .orElseThrow(() -> // if product not found then return error (product not found with productId)
 	                new ProductNotFoundException("Product","productId",productId));
-			
-			
 			// check which which properties change or update 
 			if(newProduct.getInStock() == true && product.getInStock()==false
 					|| newProduct.getInStock() == false && product.getInStock()==true) {
@@ -86,15 +83,14 @@ public class productServiceImplementation implements productService {
 			if(newProduct.getRating()!=product.getRating()) {
 				product.setRating(newProduct.getRating());
 			}
-			
 			Product updatedProduct = productRepo.save(product);
 			return updatedProduct;
-			
 		}catch(Exception err) {
 			System.err.println("failed to update product"+err.getMessage());
 			throw err;
 		}
 	}
+	
 
 	@Override
 	public apiResponse deleteProduct(String productId) {
@@ -111,10 +107,4 @@ public class productServiceImplementation implements productService {
 			throw err;
 		}
 	}
-	
-	
-
-	
-	
-
 }

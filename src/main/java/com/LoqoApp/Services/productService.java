@@ -4,14 +4,11 @@ import java.util.List;
 import com.LoqoApp.Models.Product;
 import com.LoqoApp.Payload.apiResponse;
 
-public interface productService {
+public interface productService { // Basic CRUD operation
 	
 	public Product createNewProduct(Product newProduct);
 	public List<Product> getAllProducts() throws Exception;
 	public Product getProductById(String productId);
 	public Product updateProduct(Product newProduct, String productId);
 	public apiResponse deleteProduct(String productId);
-	
-	
-
 }

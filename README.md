@@ -4,57 +4,6 @@
 
 This API allows clients to filter and sort products based on category, price range, stock availability, and sort criteria.
 
-
-
-## **Getting Started**
-
-  To run the product filtering and sorting application locally, follow these steps:
-
-### 1. Clone the repository: 
-   ```
-     https://github.com/gaurav637/Product-Filtering-Sorting-API
-   ```
-### 2. Navigate to the project directory:
-
-  ```
-    cd LoqoApplication
-  ```
-
-### 3. Open the project in your IDE: 
-
-  Eclipse (recommended) or IntelliJ IDEA If you are using Eclipse, make sure the IDE opens project as Maven and 
-  recognizes the project as a Spring Boot project.
-       
-### 4. Configure the database connection in application.properties:
-
-   MongoDB can be used as the database for this project. The database connection can be configured in the 
-   application.properties file, with the appropriate 
-   values for the following properties: (you'd better use another username not root)
-       
- ```
-    spring.data.mongodb.uri=mongodb://[ip address of db]:[port of db]/database_name
-    spring.data.mongodb.database=database_name
-
- ```
-       
-### 5. Build the project:
- 
- ```
-   mvn clean package
-```
-
-### 6. Run the application:
-
-  ``` 
-   java -jar target/LoqoApplication.jar
-  ```
-
-### 7. Access the application in your web browser at: 
-
-  ``` 
-  http://localhost:8080
- ```
-
 ## Features
 ```
     {
@@ -105,6 +54,57 @@ This API allows clients to filter and sort products based on category, price ran
 6. Version Control
 7. Problem-Solving Skills
 8. Testing and Debugging
+
+
+
+## **Getting Started**
+
+  To run the product filtering and sorting application locally, follow these steps:
+
+### 1. Clone the repository: 
+   ```
+     https://github.com/gaurav637/Product-Filtering-Sorting-API
+   ```
+### 2. Navigate to the project directory:
+
+  ```
+    cd LoqoApplication
+  ```
+
+### 3. Open the project in your IDE: 
+
+  Eclipse (recommended) or IntelliJ IDEA If you are using Eclipse, make sure the IDE opens project as Maven and 
+  recognizes the project as a Spring Boot project.
+       
+### 4. Configure the database connection in application.properties:
+
+   MongoDB can be used as the database for this project. The database connection can be configured in the 
+   application.properties file, with the appropriate 
+   values for the following properties: (you'd better use another username not root)
+       
+ ```
+    spring.data.mongodb.uri=mongodb://[ip address of db]:[port of db]/database_name
+    spring.data.mongodb.database=database_name
+
+ ```
+       
+### 5. Build the project:
+ 
+ ```
+   mvn clean package
+```
+
+### 6. Run the application:
+
+  ``` 
+   java -jar target/LoqoApplication.jar
+  ```
+
+### 7. Access the application in your web browser at: 
+
+  ``` 
+  http://localhost:8080
+ ```
 
 
 ## API Documentation

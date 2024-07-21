@@ -3,6 +3,7 @@ package com.LoqoApp.Services;
 import java.util.List;
 import com.LoqoApp.Models.Product;
 
+// sort products
 public interface sortProductServices {
 	
 	public List<Product> sortProductAscOrderPrice();// Sort by price in ascending order

@@ -34,15 +34,21 @@ This API allows clients to filter and sort products based on category, price ran
        
 **5.** Build the project:
  
- ``` mvn clean package```
+ ```
+   mvn clean package
+```
 
 **6.** Run the application:
 
-  ``` java -jar target/LoqoApplication.jar```
+  ``` 
+   java -jar target/LoqoApplication.jar
+  ```
 
 **7.** Access the application in your web browser at: 
 
-  ``` http://localhost:8080 ```
+  ``` 
+  http://localhost:8080
+ ```
 
 
 ## Requirements

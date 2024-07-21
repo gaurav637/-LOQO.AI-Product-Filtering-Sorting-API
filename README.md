@@ -65,22 +65,22 @@ This API allows clients to filter and sort products based on category, price ran
     }
 ```
    ### Product
-       - Create Products
-       - Get Products By Id
-       - Get All Produts
-       - Update Products
-       - Delete Products
+   - Create Products
+   - Get Products By Id
+   - Get All Produts
+   - Update Products
+   - Delete Products
        
    ### Filter Products
-       - Filter By Category
-       - Filter By Price
-       - Filter By InStock
-       - Filter By CreatedAt
+   - Filter By Category
+   - Filter By Price
+   - Filter By InStock
+   - Filter By CreatedAt
 
    ### Sort Products    
-       - Sort By price
-       - Sort By Rating
-       - Sort By CreatedAt
+   - Sort By price
+   - Sort By Rating
+   - Sort By CreatedAt
 
 ## Requirements
 

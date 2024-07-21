@@ -5,17 +5,6 @@
 This API allows clients to filter and sort products based on category, price range, stock availability, and sort criteria.
 
 ## Features
-```
-    {
-        "id": "669b55e40e1cd36e4e35056f",
-        "name": "Realme",
-        "category": "Android",
-        "price": 909.21,
-        "inStock": false,
-        "rating": 3.4,
-        "createdAt": "2024-07-20T06:14:59.835+00:00"
-    }
-```
    ### Product
    - Create Products
    - Get Products By Id

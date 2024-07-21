@@ -890,8 +890,8 @@ This API allows clients to filter and sort products based on category, price ran
 
 
 ## ER-Diagram
-  
-    <img width="823" alt="Screenshot 2024-07-21 at 6 31 22 PM" src="https://github.com/user-attachments/assets/0e60debd-3cd9-42dd-b8eb-a0fa732d9ff4">
+  <img width="823" alt="Screenshot 2024-07-21 at 6 31 22 PM" src="https://github.com/user-attachments/assets/9d54417e-aa8d-491d-9c10-6166861007b4">
+
 
 ## Contributing
 

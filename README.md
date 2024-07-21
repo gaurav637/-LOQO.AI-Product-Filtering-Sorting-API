@@ -107,7 +107,9 @@ This API allows clients to filter and sort products based on category, price ran
 8. Testing and Debugging
 
 
+## API Documentation
 
+`[POSTMAN](https://documenter.getpostman.com/view/32384477/2sA3kUHN6K)`
 
 
 

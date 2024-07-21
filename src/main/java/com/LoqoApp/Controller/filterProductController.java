@@ -19,6 +19,8 @@ public class filterProductController {
 	@Autowired
 	private filterProductService filterProduct;
 	
+	// find products by category 
+	
 	@GetMapping("/product/by-category")
 	public ResponseEntity<?> filterProductByCategory(@RequestParam String category){
 
@@ -36,6 +38,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find all products whose price grater than and equals to max price
+	
 	@GetMapping("/product/by-max")
 	public ResponseEntity<?> filterAllProductByMaxPrice(@RequestParam Double price){
 		try {
@@ -51,6 +55,8 @@ public class filterProductController {
 		}
 	}
 
+	// find all products whose price less than and equals to minimum price
+	
 	@GetMapping("/product/by-min")
 	public ResponseEntity<?> filterAllProductsByMinPrice(@RequestParam Double price){
 		try {
@@ -66,6 +72,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find all products according their stock availability
+	
 	@GetMapping("product/inStock")
 	public ResponseEntity<?> getProductsByInStock(@RequestParam Boolean value){
 		try {
@@ -80,6 +88,8 @@ public class filterProductController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	// find all products category based on their stock availability
 	
 	@GetMapping("prpoduct/category/instock")
 	public ResponseEntity<?> filterProductsByCategoryAndInStock(
@@ -99,6 +109,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find product more expensive compare to other all products
+	
 	@GetMapping("product/expensive")
 	public ResponseEntity<?> getProductsExpensive(){
 		try {
@@ -115,6 +127,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find product cheapest compare to other all products
+	
 	@GetMapping("product/cheaper")
 	public ResponseEntity<?> getProductsCheaper(){
 		try {
@@ -130,6 +144,8 @@ public class filterProductController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	// find all products whose price between minimumPrice and max price
 	
 	@GetMapping("product/between/min-max-price")
 	public ResponseEntity<?> getProductsBetweenMinAndMaxPrice(
@@ -149,6 +165,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find all products category whose price greater than maxPrice
+	
 	@GetMapping("product/category/maxPrice")
 	public ResponseEntity<?> getProductsCategoryMaxPrice(
 			@RequestParam String category,
@@ -167,6 +185,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find all products category whose price less than mxiniPrice
+
 	@GetMapping("product/category/minPrice")
 	public ResponseEntity<?> getProductsCategoryMiniPrice(
 			@RequestParam String category,
@@ -184,6 +204,8 @@ public class filterProductController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	// find all products category whose price between minimum and maximum price
 	
 	@GetMapping("product/category/minPriceTomaxPrice")
 	public ResponseEntity<?> getProductsCategoryMiniPriceToMaxPrice(
@@ -204,6 +226,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find all products category ascending order
+	
 	@GetMapping("product/category/maxPrice-AscOrder")
 	public ResponseEntity<?> getProductsCategoryMaxPriceAscOrder(@RequestParam String category){
 		
@@ -220,6 +244,8 @@ public class filterProductController {
 		}
 	}
 	
+	// find all products category descending order
+	
 	@GetMapping("product/category/minPrice-DsceOrder")
 	public ResponseEntity<?> getProductsCategoryMinPriceDescOrder(@RequestParam String category){
 		
@@ -235,6 +261,8 @@ public class filterProductController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	// find all products satisfy given all properties
 	
 	@GetMapping("/products")
     public ResponseEntity<?> getFilteredProducts(

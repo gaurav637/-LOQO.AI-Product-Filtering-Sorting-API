@@ -16,7 +16,10 @@ import com.LoqoApp.Services.sortProductServices;
 public class sortProductController {
 	
 	@Autowired
-	private sortProductServices product;
+	private sortProductServices product; // object sortService interface
+	
+	
+	// find all products Ascending order price
 	
 	@GetMapping("/product-by/price-asc")
 	public ResponseEntity<?> sortProductPriceByAsc(){
@@ -30,6 +33,8 @@ public class sortProductController {
 		}
 	}
 	
+	// find all products Descending order price
+	
 	@GetMapping("/product-by/price-desc")
 	public ResponseEntity<?> sortProductPriceByDesc(){
 		try {
@@ -41,6 +46,8 @@ public class sortProductController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	// find all products Ascending order rating
 	
 	@GetMapping("/product-by/rating-asc")
 	public ResponseEntity<?> sortProductRatingAsc(){
@@ -54,6 +61,8 @@ public class sortProductController {
 		}
 	}
 	
+	// find all products Descending order rating
+	
 	@GetMapping("/product-by/rating-desc")
 	public ResponseEntity<?> sortProductRatingDesc(){
 		try {
@@ -66,6 +75,8 @@ public class sortProductController {
 		}
 	}
 	
+	// find all products Ascending order createdAr
+	
 	@GetMapping("/product-by/createdAt-asc")
 	public ResponseEntity<?> sortProductCreatedAtAsc(){
 		try {
@@ -77,6 +88,8 @@ public class sortProductController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
+	
+	// find all products Descending order createdAt
 	
 	@GetMapping("/product-by/createdAt-desc")
 	public ResponseEntity<?> sortProductCreatedAtDesc(){

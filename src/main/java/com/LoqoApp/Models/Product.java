@@ -4,12 +4,12 @@ import java.util.Date;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
+// create schema
 @Document
 public class Product {
 	
 
-	@Id
+	@Id // unique
 	private String id;
 	
 	private String name;

@@ -1,10 +1,11 @@
 package com.LoqoApp.Exception;
 
+// products not found 
 public class ProductNotFoundException extends RuntimeException {
 
-	private String resource;
+	private String resource; // properties
 	
-	private String fieldName;
+	private String fieldName; // value
 	
 	private String fieldValue;
 

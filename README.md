@@ -113,33 +113,22 @@ This API allows clients to filter and sort products based on category, price ran
 
 
 
+## API Endpoints
 
 
+### Create a New Product
 
+- **Endpoint:** `POST /product-api/create/new`
+- **Description:** Creates a new product.
+- **Request Body:**
+  ```json
+  {
+    "name": "Product Name",
+    "description": "Product Description",
+    "price": 100.0,
+    "category": "Category"
+  }
 
-
-
-
-
-## Endpoints
-
-### 1. Get Filtered and Sorted Products
-
-**URL**: `/api/filter/products`
-
-**Method**: `GET`
-
-**Description**: Fetches a list of products based on the provided filters and sorts them according to the specified field and order.
-
-**Parameters**:
-- `category` (String, required): The category of the products to filter.
-- `minPrice` (Double, required): The minimum price of the products to filter.
-- `maxPrice` (Double, required): The maximum price of the products to filter.
-- `inStock` (Boolean, required): Availability of the products in stock.
-- `sortField` (String, required): The field to sort the products by (e.g., `price`, `rating`).
-- `sortOrder` (String, required): The order of sorting (`asc` for ascending, `desc` for descending).
-
-**Sample Request**:
 
 ## Contributing
 

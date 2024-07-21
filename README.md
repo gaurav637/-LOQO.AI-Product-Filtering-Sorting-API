@@ -262,7 +262,7 @@ This API allows clients to filter and sort products based on category, price ran
 
 
 
-## Filtering
+## Product Filtering API
 
 ### Filter Products by Category
 
@@ -675,6 +675,218 @@ This API allows clients to filter and sort products based on category, price ran
     }
     ```
 
+## Product Sorting API
+
+
+### Sort Products by Price in Ascending Order
+
+- **Endpoint:** `GET /api/sort/product-by/price-asc`
+- **Description:** Retrieves products sorted by price in ascending order.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name 1",
+        "description": "Product Description 1",
+        "price": 10.0,
+        "category": "Category",
+        "rating": 4.5,
+        "createdAt": "2024-07-20T10:00:00Z"
+      },
+      {
+        "id": "productId2",
+        "name": "Product Name 2",
+        "description": "Product Description 2",
+        "price": 25.0,
+        "category": "Category",
+        "rating": 4.0,
+        "createdAt": "2024-07-21T12:00:00Z"
+      }
+    ]
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by price ascending order: Error Message"
+    }
+    ```
+
+### Sort Products by Price in Descending Order
+
+- **Endpoint:** `GET /api/sort/product-by/price-desc`
+- **Description:** Retrieves products sorted by price in descending order.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId3",
+        "name": "Product Name 3",
+        "description": "Product Description 3",
+        "price": 150.0,
+        "category": "Category",
+        "rating": 5.0,
+        "createdAt": "2024-07-19T08:00:00Z"
+      },
+      {
+        "id": "productId4",
+        "name": "Product Name 4",
+        "description": "Product Description 4",
+        "price": 80.0,
+        "category": "Category",
+        "rating": 3.5,
+        "createdAt": "2024-07-18T09:00:00Z"
+      }
+    ]
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by price descending order: Error Message"
+    }
+    ```
+
+### Sort Products by Rating in Ascending Order
+
+- **Endpoint:** `GET /api/sort/product-by/rating-asc`
+- **Description:** Retrieves products sorted by rating in ascending order.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId5",
+        "name": "Product Name 5",
+        "description": "Product Description 5",
+        "price": 30.0,
+        "category": "Category",
+        "rating": 2.0,
+        "createdAt": "2024-07-20T11:00:00Z"
+      },
+      {
+        "id": "productId6",
+        "name": "Product Name 6",
+        "description": "Product Description 6",
+        "price": 40.0,
+        "category": "Category",
+        "rating": 3.0,
+        "createdAt": "2024-07-21T13:00:00Z"
+      }
+    ]
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by rating ascending order: Error Message"
+    }
+    ```
+
+### Sort Products by Rating in Descending Order
+
+- **Endpoint:** `GET /api/sort/product-by/rating-desc`
+- **Description:** Retrieves products sorted by rating in descending order.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId7",
+        "name": "Product Name 7",
+        "description": "Product Description 7",
+        "price": 60.0,
+        "category": "Category",
+        "rating": 5.0,
+        "createdAt": "2024-07-19T10:00:00Z"
+      },
+      {
+        "id": "productId8",
+        "name": "Product Name 8",
+        "description": "Product Description 8",
+        "price": 70.0,
+        "category": "Category",
+        "rating": 4.5,
+        "createdAt": "2024-07-18T14:00:00Z"
+      }
+    ]
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by rating descending order: Error Message"
+    }
+    ```
+
+### Sort Products by Creation Date in Ascending Order
+
+- **Endpoint:** `GET /api/sort/product-by/createdAt-asc`
+- **Description:** Retrieves products sorted by creation date in ascending order.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId9",
+        "name": "Product Name 9",
+        "description": "Product Description 9",
+        "price": 20.0,
+        "category": "Category",
+        "rating": 4.0,
+        "createdAt": "2024-07-18T07:00:00Z"
+      },
+      {
+        "id": "productId10",
+        "name": "Product Name 10",
+        "description": "Product Description 10",
+        "price": 25.0,
+        "category": "Category",
+        "rating": 3.5,
+        "createdAt": "2024-07-19T08:00:00Z"
+      }
+    ]
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by creation date ascending order: Error Message"
+    }
+    ```
+
+### Sort Products by Creation Date in Descending Order
+
+- **Endpoint:** `GET /api/sort/product-by/createdAt-desc`
+- **Description:** Retrieves products sorted by creation date in descending order.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId11",
+        "name": "Product Name 11",
+        "description": "Product Description 11",
+        "price": 50.0,
+        "category": "Category",
+        "rating": 4.5,
+        "createdAt": "2024-07-21T10:00:00Z"
+      },
+      {
+        "id": "productId12",
+        "name": "Product Name 12",
+        "description": "Product Description 12",
+        "price": 45.0,
+        "category": "Category",
+        "rating": 4.0,
+        "createdAt": "2024-07-20T11:00:00Z"
+      }
+    ]
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by creation date descending order: Error Message"
+    }
+    ```
 
 
 

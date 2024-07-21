@@ -23,6 +23,9 @@ public class filterProductController {
 
 		try {
 			List<Product> productCategory = this.filterProduct.filterByCategory(category);
+			if (productCategory.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(productCategory,HttpStatus.OK);
 			
 		}catch(Exception error) {
@@ -36,6 +39,9 @@ public class filterProductController {
 	public ResponseEntity<?> filterAllProductByMaxPrice(@RequestParam Double price){
 		try {
 			List<Product> products = this.filterProduct.filterByMaxPrice(price);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products by max price"+err.getMessage());
@@ -48,6 +54,9 @@ public class filterProductController {
 	public ResponseEntity<?> filterAllProductsByMinPrice(@RequestParam Double price){
 		try {
 			List<Product> products = this.filterProduct.filterByMiniPrice(price);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products by min price"+err.getMessage());
@@ -56,11 +65,13 @@ public class filterProductController {
 		}
 	}
 	
-	
 	@GetMapping("product/inStock")
 	public ResponseEntity<?> getProductsByInStock(@RequestParam Boolean value){
 		try {
 			List<Product> products = this.filterProduct.filterByInStock(value);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products by InStock"+err.getMessage());
@@ -69,8 +80,6 @@ public class filterProductController {
 		}
 	}
 	
-	// not working 
-	
 	@GetMapping("prpoduct/category/instock")
 	public ResponseEntity<?> filterProductsByCategoryAndInStock(
 			@RequestParam String category,
@@ -78,6 +87,9 @@ public class filterProductController {
 		
 		try {
 			List<Product> products = this.filterProduct.filterByProductCategoryInStock(category, value);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products by products category and  InStock"+err.getMessage());
@@ -86,12 +98,14 @@ public class filterProductController {
 		}
 	}
 	
-	// not working
-	
 	@GetMapping("product/expensive")
 	public ResponseEntity<?> getProductsExpensive(){
 		try {
 			Product products = this.filterProduct.filterMaximumPriceProduct();
+			if(products==null) {
+				String Message = "not any products available";
+				return new ResponseEntity<>(Message,HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get expensive products"+err.getMessage());
@@ -104,6 +118,10 @@ public class filterProductController {
 	public ResponseEntity<?> getProductsCheaper(){
 		try {
 			Product products = this.filterProduct.filterMinimumPriceProduct();
+			if(products==null) {
+				String Message = "not any products available";
+				return new ResponseEntity<>(Message,HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get cheaper products"+err.getMessage());
@@ -119,6 +137,9 @@ public class filterProductController {
 		
 		try {
 			List<Product> products = this.filterProduct.filterMinRangeToMaxRangeProduct(minPrice, maxPrice);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products by price between minimum and maximum"+err.getMessage());
@@ -134,6 +155,9 @@ public class filterProductController {
 		
 		try {
 			List<Product> products = this.filterProduct.filterProductCategoryMaximumRange(category,maxPrice);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products category by maximum price"+err.getMessage());
@@ -149,6 +173,9 @@ public class filterProductController {
 		
 		try {
 			List<Product> products = this.filterProduct.filterProductCategoryMinimumRange(category,miniPrice);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products category by minimum price"+err.getMessage());
@@ -165,6 +192,9 @@ public class filterProductController {
 		
 		try {
 			List<Product> products = this.filterProduct.filterProductCategoryMinRangeToMaxRange(category, miniPrice, maxPrice);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products category by minimum price to maximum price"+err.getMessage());
@@ -178,6 +208,9 @@ public class filterProductController {
 		
 		try {
 			List<Product> products = this.filterProduct.filterProductCategoryBYAscOrderPrice(category);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products category by maximum price in Ascending order"+err.getMessage());
@@ -191,6 +224,9 @@ public class filterProductController {
 		
 		try {
 			List<Product> products = this.filterProduct.filterProductCategoryByDsceOrderPrice(category);
+			if (products.size() == 0) {
+			    return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+			}
 			return new ResponseEntity<>(products,HttpStatus.OK);
 		}catch(Exception err) {
 			System.err.println("Failed to get all products category by minimum price in Descending order"+err.getMessage());
@@ -198,7 +234,6 @@ public class filterProductController {
 			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 	}
-	
 	
 	
 }

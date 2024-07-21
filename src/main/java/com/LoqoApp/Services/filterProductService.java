@@ -18,9 +18,5 @@ public interface filterProductService {
 	public List<Product> filterProductCategoryMinRangeToMaxRange(String category,Double minPrice,Double maxprice); // filter all products which price between minimum and maximum
 	public List<Product> filterProductCategoryBYAscOrderPrice(String category); // filter all product category their Ascending order price 
 	public List<Product> filterProductCategoryByDsceOrderPrice(String category); // filter all product category their Descending order price 
-	public List<Product> filterProductCategoryMinPriceMaxPriceStockSortOrder(String category,Double minPrice,Double maxPrice,Boolean inStock,String sortOrder); // filter all products based their category,price between minimum and maximum and inStock availability and price sorting order 
-
-	
-	
 
 }

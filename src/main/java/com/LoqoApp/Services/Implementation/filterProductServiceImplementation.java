@@ -168,20 +168,4 @@ public class filterProductServiceImplementation implements filterProductService{
 		}
 	}
 
-	@Override
-	public List<Product> filterProductCategoryMinPriceMaxPriceStockSortOrder(String category, Double minPrice,
-			Double maxPrice, Boolean inStock, String sortOrder) {
-		try {
-			List<Product> product = productRepo.findAll();
-			return product;
-			
-		}catch(Exception err) {
-			System.err.println("Failed to get prodcuts based on their category and price descending order!"+err.getMessage());
-			throw err;
-		}
-		
-	}
-
-	
-
 }

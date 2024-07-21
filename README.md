@@ -5,7 +5,8 @@ This API allows clients to filter and sort products based on category, price ran
 
 
 ## **Getting Started**
-To run the product filtering and sorting application locally, follow these steps:
+
+  To run the product filtering and sorting application locally, follow these steps:
 
 ### 1. Clone the repository: 
    ```
@@ -17,9 +18,9 @@ To run the product filtering and sorting application locally, follow these steps
        If you are using Eclipse, make sure the IDE opens project as Maven and recognizes the project as a Spring Boot project.
        
 **4.** Configure the database connection in application.properties:
- MongoDB can be used as the database for this project. The database connection can be configured in the 
- application.properties file, with the appropriate 
- values for the following properties: (you'd better use another username not root)
+       MongoDB can be used as the database for this project. The database connection can be configured in the 
+       application.properties file, with the appropriate 
+       values for the following properties: (you'd better use another username not root)
        
  ```
     spring.data.mongodb.uri=mongodb://[ip address of db]:[port of db]/database_name

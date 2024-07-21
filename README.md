@@ -14,18 +14,18 @@ This API allows clients to filter and sort products based on category, price ran
    ```
      https://github.com/gaurav637/Product-Filtering-Sorting-API
    ```
-### Navigate to the project directory:
+### 2. Navigate to the project directory:
 
   ```
     cd LoqoApplication
   ```
 
-### Open the project in your IDE: 
+### 3. Open the project in your IDE: 
 
   Eclipse (recommended) or IntelliJ IDEA If you are using Eclipse, make sure the IDE opens project as Maven and 
   recognizes the project as a Spring Boot project.
        
-### Configure the database connection in application.properties:
+### 4. Configure the database connection in application.properties:
 
    MongoDB can be used as the database for this project. The database connection can be configured in the 
    application.properties file, with the appropriate 
@@ -37,19 +37,19 @@ This API allows clients to filter and sort products based on category, price ran
 
  ```
        
-### Build the project:
+### 5. Build the project:
  
  ```
    mvn clean package
 ```
 
-### Run the application:
+### 6. Run the application:
 
   ``` 
    java -jar target/LoqoApplication.jar
   ```
 
-### Access the application in your web browser at: 
+### 7. Access the application in your web browser at: 
 
   ``` 
   http://localhost:8080

@@ -2,6 +2,7 @@ package com.LoqoApp.Controller;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -235,5 +236,27 @@ public class filterProductController {
 		}
 	}
 	
-	
+	@GetMapping("/products")
+    public ResponseEntity<?> getFilteredProducts(
+            @RequestParam(value = "category", required = false) String category,
+            @RequestParam(value = "minPrice", required = false) Double minPrice,
+            @RequestParam(value = "maxPrice", required = false) Double maxPrice,
+            @RequestParam(value = "inStock", required = false) Boolean inStock,
+            @RequestParam(value = "sortField", defaultValue = "price") String sortField,
+            @RequestParam(value = "sortOrder", defaultValue = "asc") String sortOrder) {
+
+        try {
+        	// Validate and set the sorting direction
+            Sort.Direction direction = sortOrder.equalsIgnoreCase("asc") ? Sort.Direction.ASC : Sort.Direction.DESC;
+
+            // Create a Sort object based on the provided field and direction
+            Sort sort = Sort.by(direction, sortField);
+            List<Product> products = filterProduct.getFilteredProducts(category, minPrice, maxPrice, inStock, sort);
+        	return new ResponseEntity<>(products,HttpStatus.OK);
+        }catch(Exception err) {
+        	System.err.println("Failed to get all products by category price between minimum price and max price ans inStock availability sortField"+err.getMessage());
+			String errorMessage = "Failed to get all products by category price between minimum price and max price ans inStock availability sortField";
+			return new ResponseEntity<>(errorMessage,HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
 }

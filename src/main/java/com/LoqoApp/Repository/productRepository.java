@@ -44,7 +44,12 @@ public interface productRepository extends MongoRepository<Product , String> {
     List<Product> findByCategoryOrderByPriceAsc(String category);
     
     List<Product> findByCategoryOrderByPriceDesc(String category);
-    
+    List<Product> findByCategoryAndPriceBetweenAndInStock(
+            String category,
+            Double minPrice,
+            Double maxPrice,
+            Boolean inStock,
+            Sort sort);
     
     // Sorting Products
     

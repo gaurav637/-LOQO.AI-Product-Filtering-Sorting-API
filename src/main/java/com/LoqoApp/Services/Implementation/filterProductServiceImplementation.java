@@ -2,6 +2,7 @@ package com.LoqoApp.Services.Implementation;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 import com.LoqoApp.Models.Product;
 import com.LoqoApp.Repository.productRepository;
@@ -168,4 +169,25 @@ public class filterProductServiceImplementation implements filterProductService{
 		}
 	}
 
+	public List<Product> getFilteredProducts(
+            String category,
+            Double minPrice,
+            Double maxPrice,
+            Boolean inStock,
+            Sort sort) {
+
+        try {
+        	List<Product> products =  productRepo.findByCategoryAndPriceBetweenAndInStock(
+                    category,
+                    minPrice,
+                    maxPrice,
+                    inStock,
+                    sort);
+        	return products;
+        	
+        }catch(Exception err) {
+        	System.err.println("Failed to get prodcuts based on their all properties!"+err.getMessage());
+			throw err;
+        }
+    }
 }

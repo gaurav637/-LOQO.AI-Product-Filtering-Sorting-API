@@ -1,0 +1,10 @@
+step 1. Create Model or Entity Relationship Model(ER)
+     2. Follow MVC (model view controller patterns)
+     3. model this folder store all schemas
+     4. controller this folder store all routes
+     5. service this folder store all business logic
+     6. serviceImplementation this folder store all implementation of services
+     7. Repository this folder store all interface that is extends by MongoDBRepository class this interface provide all function that is interaction database
+     8. Exception this folder store all exception 
+     9. payload this folder store all DOM(data object model)
+     

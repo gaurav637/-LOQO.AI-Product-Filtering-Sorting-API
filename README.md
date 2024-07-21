@@ -109,7 +109,7 @@ This API allows clients to filter and sort products based on category, price ran
 
 ## API Documentation
 
-`[POSTMAN](https://documenter.getpostman.com/view/32384477/2sA3kUHN6K)`
+[POSTMAN](https://documenter.getpostman.com/view/32384477/2sA3kUHN6K)
 
 
 
@@ -149,3 +149,8 @@ Contributions are welcome! Please follow these guidelines:
 - Make changes and commit them (`git commit -am 'Add new feature'`)
 - Push to the branch (`git push origin feature`)
 - Create a pull request
+
+## Contact
+For any questions or feedback, please reach out to : negigaurav637@gmail.com
+
+Happy coding!

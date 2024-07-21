@@ -10,9 +10,13 @@ This API allows clients to filter and sort products based on category, price ran
 
 ### 1. Clone the repository: 
    ```
-   https://github.com/gaurav637/Product-Filtering-Sorting-API
+     https://github.com/gaurav637/Product-Filtering-Sorting-API
    ```
-**2.** Navigate to the project directory: cd LoqoApplication
+**2.** Navigate to the project directory:
+
+  ```
+    cd LoqoApplication
+  ```
 
 **3.** Open the project in your IDE: Eclipse (recommended) or IntelliJ IDEA
        If you are using Eclipse, make sure the IDE opens project as Maven and recognizes the project as a Spring Boot project.
@@ -28,11 +32,17 @@ This API allows clients to filter and sort products based on category, price ran
 
  ```
        
-**5.** Build the project:``` mvn clean package```
+**5.** Build the project:
+ 
+ ``` mvn clean package```
 
-**6.** Run the application:``` java -jar target/LoqoApplication.jar```
+**6.** Run the application:
 
-**7.** Access the application in your web browser at: http://localhost:8080
+  ``` java -jar target/LoqoApplication.jar```
+
+**7.** Access the application in your web browser at: 
+
+  ``` http://localhost:8080 ```
 
 
 ## Requirements

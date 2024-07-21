@@ -1,5 +1,7 @@
 # Product Filtering and Sorting API
 
+
+
 This API allows clients to filter and sort products based on category, price range, stock availability, and sort criteria.
 
 
@@ -50,6 +52,13 @@ This API allows clients to filter and sort products based on category, price ran
   http://localhost:8080
  ```
 
+## Features
+   ### Product
+       - Create Products
+       - Get Products By Id
+       - Get All Produts
+       - Update Products
+       - Delete Products
 
 ## Requirements
 

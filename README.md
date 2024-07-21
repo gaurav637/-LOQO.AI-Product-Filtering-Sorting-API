@@ -258,7 +258,440 @@ This API allows clients to filter and sort products based on category, price ran
           "error": "Failed to delete product: Error Message",
           "success": "false"
        }
-    ```   
+    ```
+
+
+
+## Filtering
+
+### Filter Products by Category
+
+- **Endpoint:** `GET /api/filter/product/by-category`
+- **Description:** Retrieves products filtered by category.
+- **Query Parameters:**
+  - `category`: The category to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name 1",
+        "description": "Product Description 1",
+        "price": 100.0,
+        "category": "Category"
+      },
+      {
+        "id": "productId2",
+        "name": "Product Name 2",
+        "description": "Product Description 2",
+        "price": 150.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get product by category: Error Message"
+    }
+    ```
+
+### Filter Products by Maximum Price
+
+- **Endpoint:** `GET /api/filter/product/by-max`
+- **Description:** Retrieves products with a price less than or equal to the specified maximum price.
+- **Query Parameters:**
+  - `price`: The maximum price to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 80.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by max price: Error Message"
+    }
+    ```
+
+### Filter Products by Minimum Price
+
+- **Endpoint:** `GET /api/filter/product/by-min`
+- **Description:** Retrieves products with a price greater than or equal to the specified minimum price.
+- **Query Parameters:**
+  - `price`: The minimum price to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId2",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 120.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by min price: Error Message"
+    }
+    ```
+
+### Filter Products by In Stock
+
+- **Endpoint:** `GET /api/filter/product/inStock`
+- **Description:** Retrieves products based on their stock availability.
+- **Query Parameters:**
+  - `value`: Boolean value indicating whether to filter by in-stock products (`true`) or out-of-stock products (`false`).
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 100.0,
+        "category": "Category",
+        "inStock": true
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by InStock: Error Message"
+    }
+    ```
+
+### Filter Products by Category and In Stock
+
+- **Endpoint:** `GET /api/filter/product/category/instock`
+- **Description:** Retrieves products filtered by category and stock availability.
+- **Query Parameters:**
+  - `category`: The category to filter products by.
+  - `value`: Boolean value indicating whether to filter by in-stock products (`true`) or out-of-stock products (`false`).
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 100.0,
+        "category": "Category",
+        "inStock": true
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by category and InStock: Error Message"
+    }
+    ```
+
+### Get Most Expensive Product
+
+- **Endpoint:** `GET /api/filter/product/expensive`
+- **Description:** Retrieves the most expensive product.
+- **Response:**
+  - **200 OK**
+    ```json
+    {
+      "id": "productId",
+      "name": "Product Name",
+      "description": "Product Description",
+      "price": 500.0,
+      "category": "Category"
+    }
+    ```
+  - **204 No Content**
+    ```json
+    "not any products available"
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get expensive product: Error Message"
+    }
+    ```
+
+### Get Cheapest Product
+
+- **Endpoint:** `GET /api/filter/product/cheaper`
+- **Description:** Retrieves the cheapest product.
+- **Response:**
+  - **200 OK**
+    ```json
+    {
+      "id": "productId",
+      "name": "Product Name",
+      "description": "Product Description",
+      "price": 10.0,
+      "category": "Category"
+    }
+    ```
+  - **204 No Content**
+    ```json
+    "not any products available"
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get cheaper product: Error Message"
+    }
+    ```
+
+### Filter Products by Price Range
+
+- **Endpoint:** `GET /api/filter/product/between/min-max-price`
+- **Description:** Retrieves products within a specified price range.
+- **Query Parameters:**
+  - `minPrice`: The minimum price to filter products by.
+  - `maxPrice`: The maximum price to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 50.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by price between minimum and maximum: Error Message"
+    }
+    ```
+
+### Filter Products by Category and Maximum Price
+
+- **Endpoint:** `GET /api/filter/product/category/maxPrice`
+- **Description:** Retrieves products in a specified category with a price less than or equal to the maximum price.
+- **Query Parameters:**
+  - `category`: The category to filter products by.
+  - `maxPrice`: The maximum price to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 80.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by category and maximum price: Error Message"
+    }
+    ```
+
+### Filter Products by Category and Minimum Price
+
+- **Endpoint:** `GET /api/filter/product/category/minPrice`
+- **Description:** Retrieves products in a specified category with a price greater than or equal to the minimum price.
+- **Query Parameters:**
+  - `category`: The category to filter products by.
+  - `miniPrice`: The minimum price to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 120.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by category and minimum price: Error Message"
+    }
+    ```
+
+### Filter Products by Category and Price Range
+
+- **Endpoint:** `GET /api/filter/product/category/minPriceTomaxPrice`
+- **Description:** Retrieves products in a specified category within a given price range.
+- **Query Parameters:**
+  - `category`: The category to filter products by.
+  - `miniPrice`: The minimum price to filter products by.
+  - `maxPrice`: The maximum price to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 75.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by category and price range: Error Message"
+    }
+    ```
+
+### Filter Products by Category and Max Price in Ascending Order
+
+- **Endpoint:** `GET /api/filter/product/category/maxPrice-AscOrder`
+- **Description:** Retrieves products in a specified category, sorted by maximum price in ascending order.
+- **Query Parameters:**
+  - `category`: The category to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 50.0,
+        "category": "Category"
+      },
+      {
+        "id": "productId2",
+        "name": "Product Name 2",
+        "description": "Product Description 2",
+        "price": 100.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by category and max price in ascending order: Error Message"
+    }
+    ```
+
+### Filter Products by Category and Min Price in Descending Order
+
+- **Endpoint:** `GET /api/filter/product/category/minPrice-DsceOrder`
+- **Description:** Retrieves products in a specified category, sorted by minimum price in descending order.
+- **Query Parameters:**
+  - `category`: The category to filter products by.
+- **Response:**
+  - **200 OK**
+    ```json
+    [
+      {
+        "id": "productId2",
+        "name": "Product Name 2",
+        "description": "Product Description 2",
+        "price": 150.0,
+        "category": "Category"
+      },
+      {
+        "id": "productId1",
+        "name": "Product Name",
+        "description": "Product Description",
+        "price": 100.0,
+        "category": "Category"
+      }
+    ]
+    ```
+  - **204 No Content**
+    ```json
+    []
+    ```
+  - **500 Internal Server Error**
+    ```json
+    {
+      "error": "Failed to get products by category and min price in descending order: Error Message"
+    }
+    ```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
 
 ## Contributing
 

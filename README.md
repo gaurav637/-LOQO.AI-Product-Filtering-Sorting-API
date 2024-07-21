@@ -56,8 +56,8 @@ This API allows clients to filter and sort products based on category, price ran
 ```
     {
         "id": "669b55e40e1cd36e4e35056f",
-        "name": "Laptop",
-        "category": "expensive",
+        "name": "Realme",
+        "category": "Android",
         "price": 909.21,
         "inStock": false,
         "rating": 3.4,

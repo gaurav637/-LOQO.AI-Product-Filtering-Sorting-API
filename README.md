@@ -131,7 +131,7 @@ This API allows clients to filter and sort products based on category, price ran
   
 - Response:
   - 201 Created
-    ```
+    ```json
       {
           "id": "productId",
           "name": "Product Name",
@@ -140,12 +140,12 @@ This API allows clients to filter and sort products based on category, price ran
           "category": "Category"
        }
     ```
-    - 500 Internal Server Error
-      ```
-       {
-         "error": "Failed to create new Product: Error Message"
-       }
-      ```
+  - 500 Internal Server Error
+    ```json
+     {
+       "error": "Failed to create new Product: Error Message"
+     }
+    ```
 
 ### Get All Products
 
@@ -153,7 +153,7 @@ This API allows clients to filter and sort products based on category, price ran
 - **Description:** Retrieves a list of all products.
 - **Response:**
    - 200 OK
-       ```
+       ```json
         [
           {
             "id": "productId1",
@@ -170,6 +170,32 @@ This API allows clients to filter and sort products based on category, price ran
             "category": "Category 2"
           }
         ]
+
+      ```
+  - 500 Internal Server Error
+    
+    ```json
+        {
+           "error": "Failed to get all product data: Error Message"
+        }
+    ```       
+
+### Get Product by ID
+
+- **Endpoint:** GET /product-api/get/product-by-id/{productId}
+- **Description:** Retrieves a product by its ID.
+- URL Parameters:
+- **productId:** The ID of the product to retrieve.
+- Response:
+    - 200 OK
+       ```json
+        {
+          "id": "productId",
+          "name": "Product Name",
+          "description": "Product Description",
+          "price": 100.0,
+          "category": "Category"
+        }
 
        ```
 

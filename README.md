@@ -198,9 +198,67 @@ This API allows clients to filter and sort products based on category, price ran
         }
 
        ```
+   - 500 Internal Server Error
+     ```json
+      {
+        "error": "Failed to get product by productId: Error Message"
+      }
 
+     ```
+     
+### Update Product
 
+- **Endpoint:** PUT /product-api/update/product/{productId}
+- **Description:** Updates the properties of an existing product.
+- URL Parameters:
+- **productId:** The ID of the product to update.
+- Request Body:
+     ```json
+       {
+          "name": "Updated Product Name",
+          "description": "Updated Product Description",
+          "price": 120.0,
+          "category": "Updated Category"
+       }
+     ```
+- Response:
+   - 200 OK
+     ```json
+       {
+          "id": "productId",
+          "name": "Updated Product Name",
+          "description": "Updated Product Description",
+          "price": 120.0,
+          "category": "Updated Category"
+       }
+     ```
+- 500 Internal Server Error
+   ```json
+    {
+      "error": "Failed to update products: Error Message"
+    }
+   ```     
+### Delete Product
+- **Endpoint:** DELETE /product-api/delete/product/{productId}
+- **Description:** Deletes a product by its ID.
+- URL Parameters:
+- **productId:** The ID of the product to delete.
+- Response:
+  - 200 OK
+    ```json
+       {
+          "message": "Product successfully deleted",
+          "success": "true"
+      }
 
+    ```
+ - 500 Internal Server Error
+    ```json
+       {
+          "error": "Failed to delete product: Error Message",
+          "success": "false"
+       }
+    ```   
 
 ## Contributing
 

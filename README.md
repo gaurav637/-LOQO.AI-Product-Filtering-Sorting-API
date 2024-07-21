@@ -128,6 +128,52 @@ This API allows clients to filter and sort products based on category, price ran
     "price": 100.0,
     "category": "Category"
   }
+  
+- Response:
+  - 201 Created
+    ```
+      {
+          "id": "productId",
+          "name": "Product Name",
+          "description": "Product Description",
+          "price": 100.0,
+          "category": "Category"
+       }
+    ```
+    - 500 Internal Server Error
+      ```
+       {
+         "error": "Failed to create new Product: Error Message"
+       }
+      ```
+
+### Get All Products
+
+- **Endpoint:** GET /product-api/get/all-products
+- **Description:** Retrieves a list of all products.
+- **Response:**
+   - 200 OK
+       ```
+        [
+          {
+            "id": "productId1",
+            "name": "Product Name 1",
+            "description": "Product Description 1",
+            "price": 100.0,
+            "category": "Category 1"
+          },
+          {
+            "id": "productId2",
+            "name": "Product Name 2",
+            "description": "Product Description 2",
+            "price": 150.0,
+            "category": "Category 2"
+          }
+        ]
+
+       ```
+
+
 
 
 ## Contributing

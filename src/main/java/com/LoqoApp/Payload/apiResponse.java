@@ -1,7 +1,7 @@
 package com.LoqoApp.Payload;
 
 
-// return api response 
+// this class is used to return the API response 
 public class apiResponse {
 
 	private String message;
@@ -29,6 +29,7 @@ public class apiResponse {
 	public apiResponse() {
 		
 	}
+	
 	@Override
 	public String toString() {
 		return "apiResponse [message=" + message + ", result=" + result + "]";

@@ -37,7 +37,7 @@ public class productController {
 		}
 	}
 	
-	//get all products 
+	// get all products 
 	
 	@GetMapping("/get/all-products")
 	public ResponseEntity<?> getAllProducts(){
@@ -51,7 +51,7 @@ public class productController {
 		}
 	}
 	
-	//get products by id
+	// get products by id
 	
 	@GetMapping("/get/product-by-id/{productId}")
 	public ResponseEntity<?> getProductById(@PathVariable("productId") String productId){

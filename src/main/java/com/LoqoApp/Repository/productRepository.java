@@ -10,30 +10,29 @@ public interface productRepository extends MongoRepository<Product , String> {
 	
 	// Filter Products
 	
-	List<Product> findByCategory(String category);
+	List<Product> findByCategory(String category); // get all products based on their category 
 	
-	List<Product> findByPriceGreaterThanEqual(Double price);
+	List<Product> findByPriceGreaterThanEqual(Double price); // get all products based on their price equals and grater than 
 	
-	List<Product> findByPriceLessThanEqual(Double price);
+	List<Product> findByPriceLessThanEqual(Double price); // get all products based on their price equals and less than 
 	
-	List<Product> findByInStock(Boolean value);
+	List<Product> findByInStock(Boolean value); // get all products based on their stock availability
 	
-	List<Product> findByCategoryAndInStock(String category,Boolean InStock);
+	List<Product> findByCategoryAndInStock(String category,Boolean InStock); // get all products category based on their stock availability
 	
 	@Aggregation(pipeline = {
 		    "{ '$sort': { 'price': 1 } }",
 		    "{ '$limit': 1 }"
 	})
+    Product findTopByOrderByPriceDesc();//  find cheapest products in all products 
 	
-    Product findTopByOrderByPriceDesc();
 	@Aggregation(pipeline = {
 		    "{ '$sort': { 'price': -1 } }",
 		    "{ '$limit': 1 }"
 	})
+    Product findTopByOrderByPriceAsc(); //  find expensive product in all products 
 	
-    Product findTopByOrderByPriceAsc();
-	
-    List<Product> findByPriceBetween(Double minPrice, Double maxPrice);
+    List<Product> findByPriceBetween(Double minPrice, Double maxPrice);// find all products their price between minimum price and maximum price
     
     List<Product> findByCategoryAndPriceGreaterThanEqual(String category, Double maxPrice);
     
@@ -54,17 +53,17 @@ public interface productRepository extends MongoRepository<Product , String> {
     // Sorting Products
     
     
-    List<Product> findAllByOrderByPriceAsc();
+    List<Product> findAllByOrderByPriceAsc(); // get all products whose price sort Ascending order
     
-    List<Product> findAllByOrderByPriceDesc();
+    List<Product> findAllByOrderByPriceDesc(); // get all products whose price sort Descending order
 
-    List<Product> findAllByOrderByRatingAsc();
+    List<Product> findAllByOrderByRatingAsc(); // get all products whose rating sort Ascending order
     
-    List<Product> findAllByOrderByRatingDesc();
+    List<Product> findAllByOrderByRatingDesc(); // get all products whose rating sort Descending order
     
-    List<Product> findAllByOrderByCreatedAtAsc();
+    List<Product> findAllByOrderByCreatedAtAsc(); // get all products whose createdAt sort Ascending order
     
-    List<Product> findAllByOrderByCreatedAtDesc();
+    List<Product> findAllByOrderByCreatedAtDesc(); //  get all products whose createdAt sort Descending order
     
 }
 

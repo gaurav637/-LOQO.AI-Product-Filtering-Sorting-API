@@ -24,7 +24,7 @@ public class Product {
 	
     private Date createdAt;
     
-    
+    // getter and setter methods 
 
 	public String getId() {
 		return id;
@@ -82,6 +82,8 @@ public class Product {
 		this.createdAt = createdAt;
 	}
 	
+	//constructor
+	
 	public Product(String id, String name, String category, double price, boolean inStock, double rating,
 			Date createdAt) {
 		super();
@@ -94,9 +96,13 @@ public class Product {
 		this.createdAt = createdAt;
 	}
 	
+	// default constructor
+	
 	public Product() {
 		
 	}
+	
+	// toString method 
 
 	@Override
 	public String toString() {
